@@ -1,4 +1,4 @@
-<template>
+,<template>
     <v-app dark>
     <v-container grid-list-xl text-xs-center>
         <v-layout row wrap>
@@ -33,6 +33,9 @@
 
 <script>
 
+// index.js or main.js
+import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
+
 export default {
     name: 'search',
     data() {
@@ -50,8 +53,8 @@ export default {
     methods: {
         search: function (query) {
         this.isSearching = true;
-        this.axios.get('https://swapi.co/api/people/', {params: {search: query}})
-            .then(function(response) {
+        axios.get('https://swapi.co/api/people/', {params: {search: query}})
+            .then((response) => {
                 console.log(response.data.results);
                 this.resultsPeople = response.data.results.map((x) => x.name );
                 this.isSearching = false;
@@ -62,5 +65,6 @@ export default {
 
 }
 </script>
+
 
 

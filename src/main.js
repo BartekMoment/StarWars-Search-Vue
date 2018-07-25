@@ -2,12 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import axios from 'axios'
-import VueAxios from 'vue-axios'
 import App from './App'
 import Vuetify from 'vuetify'
 
 Vue.use(Vuetify)
-Vue.use(VueAxios, axios)
+Vue.use(axios)
 
 Vue.config.productionTip = false
 
